@@ -17,26 +17,13 @@ public class CreateItemWorkflowImpl implements CreateItemWorkflow {
     private ItemRepository itemRepository;
 
     @Autowired
-    private PlaceRepository placeRepository;
+    private GetOrCreatePlaceWorkflow getOrCreatePlaceWorkflow;
 
     @Override
     public Item createItem(CreateItemRequestDTO requestDTO) throws Exception {
         Item item = new Item();
         item.setName(requestDTO.getName());
-
-        Place place;
-        if (requestDTO.getPlaceId() != null) {
-            place = placeRepository.findById(requestDTO.getPlaceId()).get();
-        } else if (requestDTO.getPlaceName() != null) {
-            place = new Place();
-            place.setName(requestDTO.getPlaceName());
-            placeRepository.save(place);
-        } else {
-            throw new Exception("Cannot create Item: placeId or placeName should be provided");
-        }
-
-        item.setPlace(place);
-
+        item.setPlace(getOrCreatePlaceWorkflow.getOrCreatePlace(requestDTO.getPlaceId(), requestDTO.getPlaceName()));
         itemRepository.save(item);
         return item;
     }
