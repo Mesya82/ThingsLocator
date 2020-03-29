@@ -1,14 +1,10 @@
-package com.messier82.thingslocator.workflow;
+package com.messier82.thingslocator.workflow.item;
 
 import com.messier82.thingslocator.dto.CreateItemRequestDTO;
 import com.messier82.thingslocator.model.Item;
-import com.messier82.thingslocator.model.Place;
 import com.messier82.thingslocator.repository.ItemRepository;
-import com.messier82.thingslocator.repository.PlaceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 public class CreateItemWorkflowImpl implements CreateItemWorkflow {

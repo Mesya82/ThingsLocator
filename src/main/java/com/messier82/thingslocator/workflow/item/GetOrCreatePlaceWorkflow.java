@@ -1,4 +1,4 @@
-package com.messier82.thingslocator.workflow;
+package com.messier82.thingslocator.workflow.item;
 
 import com.messier82.thingslocator.model.Place;
 
