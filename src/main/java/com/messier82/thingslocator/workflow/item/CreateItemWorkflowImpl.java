@@ -1,6 +1,6 @@
 package com.messier82.thingslocator.workflow.item;
 
-import com.messier82.thingslocator.dto.CreateItemRequestDTO;
+import com.messier82.thingslocator.dto.item.CreateItemRequestDTO;
 import com.messier82.thingslocator.model.Item;
 import com.messier82.thingslocator.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;

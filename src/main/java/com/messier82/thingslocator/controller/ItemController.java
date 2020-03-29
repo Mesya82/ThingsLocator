@@ -1,7 +1,7 @@
 package com.messier82.thingslocator.controller;
 
-import com.messier82.thingslocator.dto.CreateItemRequestDTO;
-import com.messier82.thingslocator.dto.MoveItemRequestDTO;
+import com.messier82.thingslocator.dto.item.CreateItemRequestDTO;
+import com.messier82.thingslocator.dto.item.MoveItemRequestDTO;
 import com.messier82.thingslocator.model.Item;
 import com.messier82.thingslocator.repository.ItemRepository;
 import com.messier82.thingslocator.workflow.item.CreateItemWorkflow;

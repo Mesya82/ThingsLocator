@@ -1,4 +1,4 @@
-package com.messier82.thingslocator.dto;
+package com.messier82.thingslocator.dto.item;
 
 import lombok.Data;
 
