@@ -21,7 +21,7 @@ public class GetOrCreatePlaceWorkflowImpl implements GetOrCreatePlaceWorkflow {
             place.setName(placeName);
             placeRepository.save(place);
         } else {
-            throw new Exception("Cannot create Item: placeId or placeName should be provided");
+            throw new Exception("Cannot retrieve of create Place: placeId or placeName should be provided");
         }
         return place;
     }

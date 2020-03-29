@@ -15,6 +15,10 @@ public class DeleteItemWorkflowImpl implements DeleteItemWorkflow {
 
     @Override
     public void deleteItem(Long itemId) throws Exception {
+        if (itemId == null) {
+            throw new Exception("Cannot delete Item: itemId must be provided");
+        }
+
         Optional<Item> optionalItem = itemRepository.findById(itemId);
 
         if (optionalItem.isEmpty()) {

@@ -20,6 +20,10 @@ public class MoveItemWorkflowImpl implements MoveItemWorkflow {
 
     @Override
     public Item moveItem(MoveItemRequestDTO requestDTO) throws Exception {
+        if (requestDTO.getItemId() == null) {
+            throw new Exception("Cannot move Item: id of the Item to move must be provided");
+        }
+
         Optional<Item> optionalItem = itemRepository.findById(requestDTO.getItemId());
 
         if (optionalItem.isEmpty()) {
